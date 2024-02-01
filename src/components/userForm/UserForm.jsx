@@ -1,21 +1,28 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import "./userForm.style.css";
+import UserForm2 from "./UserForm2";
 
-const defaultData = {
+export const defaultData = {
   id: "",
   name: "",
   email: "",
   phone: "",
   website: "",
+  job: "",
+  salary: "",
+  maritalStatus: "",
 };
 
 const UserForm = ({ addUserHandler }) => {
   const [userData, setUserData] = useState(defaultData);
+  const [isPage1Completed, setIsPage1Completed] = useState(false);
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    addUserHandler(userData);
-    setUserData(defaultData);
+    setIsPage1Completed(true);
+    //  addUserHandler(userData);
+    //  setUserData(defaultData);
   };
 
   const onInputChange = (e) => {
@@ -27,38 +34,53 @@ const UserForm = ({ addUserHandler }) => {
   };
 
   return (
-    <form onSubmit={onSubmitHandler}>
-      <input
-        value={userData.name}
-        name="name"
-        type="text"
-        placeholder="enter your name..."
-        onChange={onInputChange}
-      />
-      <input
-        value={userData.email}
-        name="email"
-        type="email"
-        placeholder="enter your email"
-        onChange={onInputChange}
-      />
-      <input
-        value={userData.phone}
-        name="phone"
-        type="number"
-        placeholder="enter your phone..."
-        onChange={onInputChange}
-      />
-      <input
-        value={userData.website}
-        name="website"
-        type="text"
-        placeholder="enter your website..."
-        onChange={onInputChange}
-      />
-
-      <button>Add</button>
-    </form>
+    <>
+      {isPage1Completed ? (
+        <UserForm2 addUserHandler={addUserHandler} />
+      ) : (
+        <form onSubmit={onSubmitHandler}>
+          <div className="form-box">
+            <div className="pages">
+              <div id="page1">1</div>
+              <hr />
+              <div id="page2">2</div>
+            </div>
+            <input
+              value={userData.name}
+              name="name"
+              type="text"
+              placeholder="enter your name..."
+              onChange={onInputChange}
+              required
+            />
+            <input
+              value={userData.email}
+              name="email"
+              type="email"
+              placeholder="enter your email"
+              onChange={onInputChange}
+              required
+            />
+            <input
+              value={userData.phone}
+              name="phone"
+              type="number"
+              placeholder="enter your phone..."
+              onChange={onInputChange}
+              required
+            />
+            <input
+              value={userData.website}
+              name="website"
+              type="text"
+              placeholder="enter your website..."
+              onChange={onInputChange}
+            />
+            <button type="submit">Next</button>
+          </div>
+        </form>
+      )}
+    </>
   );
 };
 

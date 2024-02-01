@@ -34,11 +34,10 @@ const UsersApp = () => {
 
   return (
     <div className="usersApp-container">
-      <button onClick={() => setIsUserFormOpen(!isUserFormOpen)}>+</button>
-      {isUserFormOpen ? <UserForm addUserHandler={addUser} /> : null}
+      <h1>Top users of GoOgLe!</h1>
       <table>
         <thead>
-          <tr>
+          <tr className="thead-row">
             <th>id</th>
             <th>name</th>
             <th>email</th>
@@ -56,6 +55,12 @@ const UsersApp = () => {
           ))}
         </tbody>
       </table>
+      <div className="addUser-btn">
+        <button onClick={() => setIsUserFormOpen(!isUserFormOpen)}>
+          Add user
+        </button>
+        {isUserFormOpen ? <UserForm addUserHandler={addUser} /> : null}
+      </div>
     </div>
   );
 };
