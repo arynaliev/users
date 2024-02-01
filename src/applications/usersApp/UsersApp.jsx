@@ -37,17 +37,24 @@ const UsersApp = () => {
       <button onClick={() => setIsUserFormOpen(!isUserFormOpen)}>+</button>
       {isUserFormOpen ? <UserForm addUserHandler={addUser} /> : null}
       <table>
-        <tr>
-          <th>id</th>
-          <th>name</th>
-          <th>email</th>
-          <th>phone</th>
-          <th>website</th>
-          <th>action</th>
-        </tr>
-        {usersList.map((el, index) => (
-          <UserRow key={index} user={el} onXClick={onXClick} />
-        ))}
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>phone</th>
+            <th>website</th>
+            <th>job</th>
+            <th>salary</th>
+            <th>marital status</th>
+            <th>action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {usersList.map((el, index) => (
+            <UserRow key={index} user={el} onXClick={onXClick} />
+          ))}
+        </tbody>
       </table>
     </div>
   );

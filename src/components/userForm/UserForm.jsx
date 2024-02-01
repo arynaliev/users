@@ -22,7 +22,7 @@ const UserForm = ({ addUserHandler }) => {
     setUserData({
       ...userData,
       [e.target.name]: e.target.value,
-      id: uuidv4().slice(0, 3),
+      id: uuidv4().slice(-3),
     });
   };
 
