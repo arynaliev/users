@@ -21,7 +21,7 @@ const UserForm = ({ addUserHandler }) => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     setIsPage1Completed(true);
-    //  addUserHandler(userData);
+    addUserHandler(userData);
     //  setUserData(defaultData);
   };
 
