@@ -44,9 +44,9 @@ const UserForm2 = ({ addUserHandler }) => {
               placeholder="enter your annual salary..."
             />
 
-            <h4>Marital status</h4>
+            <p id="marital-status">Marital status</p>
 
-            <div>
+            <div className="marital-status-box">
               <label>Married</label>
               <input
                 type="radio"
@@ -62,7 +62,7 @@ const UserForm2 = ({ addUserHandler }) => {
               />
             </div>
 
-            <div>
+            <div className="submit-box">
               <IoChevronBackCircle />
               <button type="submit">Submit</button>
             </div>

@@ -30,3 +30,8 @@ td {
 tr:nth-child(even) {
   background-color: rgba(128, 128, 128, 0.531);
 }
+
+#add-user-btn {
+  width: 100px;
+  padding: 5px 10px;
+}

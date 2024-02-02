@@ -12,3 +12,17 @@ form {
   justify-content: center;
   align-items: center;
 }
+
+.marital-status-box {
+  font-size: 1rem;
+}
+
+#marital-status {
+  font-size: 1rem;
+}
+
+.submit-box {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}

@@ -56,7 +56,10 @@ const UsersApp = () => {
         </tbody>
       </table>
       <div className="addUser-btn">
-        <button onClick={() => setIsUserFormOpen(!isUserFormOpen)}>
+        <button
+          id="add-user-btn"
+          onClick={() => setIsUserFormOpen(!isUserFormOpen)}
+        >
           Add user
         </button>
         {isUserFormOpen ? <UserForm addUserHandler={addUser} /> : null}
